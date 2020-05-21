@@ -1,0 +1,340 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+body,html{height:100%;width:100%}
+body{font-family: 'Poppins';color:#333;}
+#app{width:100%;height:100%}
+
+/**** bof :: variables *********/
+$yellowcolor : #FEC931;
+$grey:#f5f6fa;
+
+/**** eof :: variables *********/
+
+/****** bof :: Header ********/
+.header{
+  display: flex;justify-content: space-between; padding:10px 5%;align-items: center;
+  position: fixed;top:0;left:0;width:100%;z-index:5;color:#333;background: #fff;
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.3);
+  .logo{
+    font-size: 30px;
+    a{text-decoration: none;color:#333;}
+  }
+  
+  nav{
+    span{padding:20px;text-transform: uppercase;a{text-decoration: none;color:#333;}}
+  }
+}
+
+/****** eof :: Header ********/
+
+/****** bof :: Home ********/
+
+.section{
+  width:100%;height:100%;overflow: hidden;
+  
+  .back_img{
+    height:100vh;
+    min-height:100%;
+    
+    .back_img_content{
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100;
+      height: 100%;
+      h5{
+        font-family: cursive;
+        color:$yellowcolor;font-size: 30px;
+      }
+      h3{
+        color:#fff;font-family: 'Poppins';font-size: 40px;line-height: 2;
+      }
+    }
+  }
+  
+  .bg1{
+    background: url('../assets/images/home-banner-1.jpg');
+  }
+  .bg2{
+    background: url('../assets/images/home-banner-2.jpg');
+  }
+  
+  
+  .home_banner_left_arrow{
+    transition: all 2s ease;
+    
+    &:hover:before{
+      background: rgba(0,0,0,1);
+    }
+    
+    &:before{
+      transition: all 0.5s ease;
+      content:'\2190';font-size: 20px;font-weight: 500;
+      position: absolute;top:50%;left:2%;display: flex; justify-content: center;align-items: center;
+      height:60px;width:60px;color:#fff;background:rgba(0,0,0,0.4);border-radius: 50%;cursor: pointer;
+    }
+  }
+  
+  .home_banner_right_arrow{
+    transition: all 2s ease;
+    
+    &:hover:before{
+      background: rgba(0,0,0,1);
+    }
+    
+    &:before{
+      transition: all 0.5s ease;
+      content:'\2192';font-size: 20px;font-weight: 500;
+      position: absolute;top:50%;right:2%;display: flex; justify-content: center;align-items: center;
+      height:60px;width:60px;color:#fff;background:rgba(0,0,0,0.4);border-radius: 50%;cursor: pointer;
+    }
+  }
+  
+    
+  
+  .slick-next, .slick-prev{display: none;}
+  
+  .slick-dots{
+    position: absolute;
+    top: 90vh;
+    li{
+      width:30px;height:4px;background: #fff;
+      &.slick-active{
+        background: #000;
+      }
+    }
+    li button:before{
+      width:30px;height:4px;background: #000;content:''
+    }
+  }
+}
+
+
+.excellence{
+  
+  .content{
+    padding:60px 0px;
+    width:90%;
+    margin:0 auto;
+    span{      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h4{
+        color:$yellowcolor;
+        font-size: 18px;letter-spacing: 2px;
+      }
+      p{
+        color:#333;font-size: 16px;letter-spacing: 2px;width:70%;text-align: center;line-height: 2;margin-top:10px;
+      }
+    }
+  
+    .usps{
+      display: grid;grid-template-columns: repeat(3,1fr);grid-column-gap: 80px;
+      margin-top:30px;
+      
+      
+      
+      .image{
+        height:400px;cursor: pointer;transition: background 2s ease;
+        &.img1{background: url('../assets/images/netflix.jpg');background-size: cover;
+          &:hover {            
+            background-image: linear-gradient(to left, rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('../assets/images/netflix.jpg');background-size: cover;
+          }
+        
+          
+        }
+        &.img2{background: url('../assets/images/experts.jpg');background-size: cover;transition: all 2s ease;
+          &:hover {
+            background-image: linear-gradient(to left, rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('../assets/images/experts.jpg');background-size: cover;
+          }}
+        &.img3{background: url('../assets/images/highly-skilled.jpg');background-size: cover;transition: all 2s ease;
+          &:hover {
+            background-image: linear-gradient(to left, rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('../assets/images/highly-skilled.jpg');background-size: cover;
+          }
+        }
+      }
+      
+      .img_content{
+        padding:20px 10px;font-family: cursive;font-size: 20px;
+        background: #f5f6fa;
+        width: 80%;
+        float: right;
+        
+        b{
+          color:$yellowcolor;
+        }
+        p{
+          margin-top: 10px;
+        }
+      }
+      
+    }
+  
+  }
+}
+
+.our_story{
+  background: $grey;
+  .content{
+    padding:100px 0px 100px 0px;width:90%;
+    margin:0 auto;
+    display: grid;grid-template-columns: 45% 55%;
+    
+    
+    .back_img{
+      background-image: url('../assets/images/our-story.png');background-size: cover;height:550px;
+    }
+    
+    .img_content{
+      display: flex;flex-direction: column;padding:0px 10px 0px 100px;
+      h5{
+        color:$yellowcolor;font-size: 25px;letter-spacing: 2px;margin-bottom: 5px;font-family: cursive;
+      }
+      h4{font-size: 22px;letter-spacing: 4px;margin-bottom: 20px;}
+      p{padding:10px 0px;color:#757575;letter-spacing:1px;}
+    }
+    
+  }
+}
+
+.moto{
+  position: relative;
+  background-image: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.7)) ,url('../assets/images/carousel3.jpg');
+  background-attachment: fixed;background-position: center;
+  height:400px;background-size: cover;
+  .content{
+    width:90%;margin:0 auto;
+    margin-left:30%;letter-spacing: 2px;font-size: 30px;margin-top:100px;
+    
+    h6{color:$yellowcolor;margin-top:50px;}
+
+  }
+  
+  
+  .image{
+    background: url('../assets/images/testi-1-1.jpg.webp');background-size: cover;
+    height:280px;width:280px;position: absolute;top:-50px;left:100px;
+  }
+  display: flex;justify-content: center;align-items: center;font-size: 30px;color:#fff;
+  
+  
+}
+
+.why_us{
+  display: grid;grid-template-columns: 50% 50%;padding:0px 0px;
+  .left_card{
+    .image{
+      background: url('../assets/images/we-belive-in-1-2.jpg.webp');background-size: cover;height:300px;
+    }
+    background:$grey;
+    padding:80px 100px;
+    
+    h5{color: #333;font-size: 25px;letter-spacing: 2px;margin-top:20px;}
+    p{margin-top:20px;letter-spacing: 2px;line-height: 1.5em;text-align: justify;}
+  }
+  .right_card{
+    background: #fff;padding:80px 100px;
+    h6{color:$yellowcolor;font-family: cursive;font-size:25px;margin-bottom: 10px;}
+    h4{font-size:30px;margin-bottom: 40px;}
+    
+    .why_lists{
+      margin-top:20px;cursor: pointer;
+      border-bottom:1px solid rgba(0,0,0,0.4);padding-bottom: 10px;
+      display: flex;justify-content:space-between;align-items: center;
+      b{
+        font-size: 20px;
+      }
+      ion-icon{
+        color:#2884C6;font-size: 24px;
+      }
+    
+      
+    }
+    
+    .why_content{
+      transition: all 2s ease;
+      margin:20px 0px;display: inline-block;line-height: 2;letter-spacing: 2px;
+      
+    }
+  }
+}
+
+
+/****** eof :: Home ********/
+
+/****** bof :: About ********/
+
+.about .bg3{
+    background-image:linear-gradient(to right , rgba(0,0,0,0.7) , rgba(0,0,0,0.7)), url('../assets/images/about4.jpg'); background-size: cover;
+    background-position: center;
+    
+    h4{
+      font-size: 20px;color: #fff;letter-spacing: 2px;line-height: 2;width: 80%;font-weight: 200;margin-top:40px;
+      }
+  }
+  
+  .wrapper_component .content{
+    width:90%;margin:0 auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+    >div{
+      
+      margin:40px 20px;
+      
+      &.left_card{
+        background: $grey;
+        padding: 30px;letter-spacing: 1.4px;
+        b{
+          font-size: 24px;color:$yellowcolor;
+        }
+        h6{font-size:20px;margin-top:10px;color:#333;margin-bottom: 30px;}
+        span{color:$yellowcolor;line-height: 2;}
+        p{margin-top:20px;line-height: 2;}
+      }
+      &.right_card{
+        
+        
+        .inner_card{
+          
+          background: $grey;padding:30px;
+          
+          >div{
+            display: flex;align-items: center;font-size:22px;
+          }
+          
+          >span{
+            margin-top:20px;padding-left:50px;
+            display: inline-block;color:#333;letter-spacing: 1.5px;
+          }
+          
+          ion-icon{
+            font-size:30px;margin-right:20px;
+          }
+          
+          &.inc2{
+            margin:20px 0px;
+            
+          }
+        }
+      }
+    }
+  }
+  
+
+/********* eof :: About *********/
+
+
+
+
+/********* bof :: footer *********/
+
+footer{
+background:rgba(0,0,0,0.97);color:#fff;
+.content{
+  width:87%;margin:0 auto;padding:30px 0px;letter-spacing: 2px;font-size: 16px;
+}
+}
+
+/********* eof :: footer ********/
